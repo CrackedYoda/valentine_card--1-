@@ -2,15 +2,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2/tsparticles.confetti.bundle.min.js"></script>
+    <script src="script.js"></script> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To my Princess</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.0"></script>
+    <style>
+        /* Overlay Styles */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #cd9696;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4em; /* Adjust font size as needed */
+            font-family: "Bubblegum Sans", serif; /* Use your font */
+            color: #fa5757; /* Or any color you like */
+            z-index: 1000; /* Ensure it's on top */
+        }
+        #overlay h4 { /* Style the "Hey Princess" text */
+            font-family: "Bubblegum Sans", serif;
+            color: #f58181;
+            animation: float 5s infinite ease-in-out; /* Add floating animation */
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); } /* Adjust float height */
+        }
+    </style>
 </head>
 <body>
-    
-       <div class="maincontent">  <img src="./Ellipse 20.png" class="falling-image" style="left: 10%; animation-duration: 5s;">
+
+    <div id="overlay"> <h4> Hey Princess⭐️ </h4></div>  
+    <div class="maincontent">
+        <img src="./Ellipse 20.png" class="falling-image" style="left: 10%; animation-duration: 5s;">
         <img src="./Ellipse 23.png" class="falling-image" style="left: 30%; animation-duration: 6s;">
         <img src="./Ellipse 24.png" class="falling-image" style="left: 50%; animation-duration: 7s;">
         <img src="./Ellipse 26.png" class="falling-image" style="left: 70%; animation-duration: 5.5s;">
@@ -18,30 +49,18 @@
         <div class="content">
             <h2>To My ☀️ </h2>
             <p>I've been thinking on how to go about this without you knowing and how to make it the prettiest even though it's been a while since i last coded and i'm kinda rusty. I thought it would be the most heartfelt way i could convey my intentions to my princess</p>
-           <p>My beautiful princess and closest confidant, my shoulder to lean on, my fair ball of beauty, the sun in my life, and my one true love,
-           Loving you is the most beautiful experience life has given me, and I look forward to spending the rest of my life with you.
-            In the spirit of Valentine’s and the season of love,</p>
+            <p>My beautiful princess and closest confidant, my shoulder to lean on, my fair ball of beauty, the sun in my life, and my one true love,
+                Loving you is the most beautiful experience life has given me, and I look forward to spending the rest of my life with you.
+                In the spirit of Valentine’s and the season of love,</p>
             <p> Adaeze My Queen, will you be my <span>Valentine❤️?</span></p>
-        <div class="button-container">
+            <div class="button-container">
                 <button class="yes-button" onclick="startConfetti()">Yes</button>
+                <h3>Or</h3>
                 <button class="yes-button" onclick="startConfetti()">Yes</button>
             </div>
-            
             <canvas id="confetti-canvas"></canvas>
-     
-            <!-- <button>Yes or Yes</button> -->
         </div>
-       <img src="./me2.png" class="me2">
+        <img src="./me2.png" class="me2">
     </div>
-    
-    <script>
-        function startConfetti() {
-            confetti({
-                particleCount: 150, // Number of confetti pieces
-                spread: 120, // Spread area
-                origin: { y: 0.6 } // Start falling from the middle
-            });
-        }
-    </script>
 </body>
 </html>
